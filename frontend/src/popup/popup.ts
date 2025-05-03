@@ -2,7 +2,7 @@
 import Alpine from "@alpinejs/csp";
 
 Alpine.data("popup", () => ({
-  message: "Hello World!",
+  message: "Hello!",
   enabled: false,
 
   init() {

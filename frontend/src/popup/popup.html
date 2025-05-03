@@ -6,13 +6,25 @@
         <link href="/src/global.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Hello world!</h1>
         <script type="module" src="./popup.ts"></script>
-        <div x-data="popup">
-            <div x-show="enabled">
-                <p x-text="message"></p>
+        <div class="card w-96 bg-base-100 card-xl shadow-sm" x-data="popup">
+            <div class="card-body">
+                <h1 class="card-title">Tonic</h1>
+                <p>Take a breather, you don't want to do something dumb</p>
+                <fieldset class="fieldset">
+                    <label class="label">
+                        <input
+                            type="checkbox"
+                            class="toggle"
+                            @change="toggle"
+                        />
+                        Enable Tonic
+                    </label>
+                </fieldset>
+                <div x-show="enabled">
+                    <p x-text="message" class="text-sm"></p>
+                </div>
             </div>
-            <button @click="toggle">Toggle</button>
         </div>
     </body>
 </html>
