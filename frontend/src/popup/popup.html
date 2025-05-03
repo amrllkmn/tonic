@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html data-theme="nord">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,15 +7,34 @@
     </head>
     <body>
         <script type="module" src="./popup.ts"></script>
-        <div class="card w-96 bg-base-100 card-xl shadow-sm" x-data="popup">
+        <div class="card w-96 card-xl bg-base-100" x-data="popup">
             <div class="card-body">
-                <h1 class="card-title">Tonic</h1>
-                <p>Take a breather, you don't want to do something dumb</p>
+                <h1 class="card-title">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-16 h-16 text-primary"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="10" y1="15" x2="10" y2="9"></line>
+                        <line x1="14" y1="15" x2="14" y2="9"></line>
+                    </svg>
+                    Tonic
+                </h1>
+                <p class="text-sm">
+                    Take a breather when you're feeling like you're about to say
+                    something dumb.
+                </p>
                 <fieldset class="fieldset">
-                    <label class="label">
+                    <label class="label text-neutral">
                         <input
                             type="checkbox"
-                            class="toggle"
+                            class="toggle toggle-primary"
                             @change="toggle"
                         />
                         Enable Tonic
