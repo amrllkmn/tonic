@@ -5,11 +5,14 @@ Alpine.data("popup", () => ({
   message: "Hello!",
   enabled: false,
 
-  init() {
+  async init() {
     console.log("Popup initialized");
+    const result = await chrome.storage.sync.get(["enabled"]);
+    this.enabled = result.enabled || false;
   },
-  toggle() {
+  async toggle() {
     this.enabled = !this.enabled;
+    await chrome.storage.sync.set({ enabled: this.enabled });
   },
 }));
 
